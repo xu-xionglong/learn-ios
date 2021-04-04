@@ -6,7 +6,7 @@ import SnapKit
 //1. updateConstraints from subview to superview
 //2. layoutSubviews from superview to subview
 
-class RootView: UIView {
+private class RootView: UIView {
     override func layoutSubviews() {
         //override this when
         //1. Constraints are not enough to express view’s layout.
@@ -21,7 +21,7 @@ class RootView: UIView {
     }
 }
 
-class FirstView: UIView {
+private class FirstView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         print("FirstView layoutSubviews")
@@ -32,7 +32,7 @@ class FirstView: UIView {
     }
 }
 
-class SecondView: UIView {
+private class SecondView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         print("SecondView layoutSubviews")
