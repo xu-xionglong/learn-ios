@@ -2,6 +2,28 @@ import Foundation
 
 import UIKit
 
+//Show - Pushes the destination view controller onto the navigation stack, sliding overtop from right to left, providing a back button to return to the source - or if not embedded in a navigation controller it will be presented modally
+//Example: Navigating inboxes/folders in Mail
+
+//Show Detail - For use in a split view controller, replaces the detail/secondary view controller when in an expanded 2 column interface, otherwise if collapsed to 1 column it will push in a navigation controller
+//Example: In Messages, tapping a conversation will show the conversation details - replacing the view controller on the right when in a two column layout, or push the conversation when in a single column layou
+
+
+//Present Modally - Presents a view controller in various animated fashions as defined by the Presentation option, covering the previous view controller - most commonly used to present a view controller that animates up from the bottom and covers the entire screen on iPhone, or on iPad it's common to present it as a centered box that darkens the presenting view controller
+//Example: Selecting Touch ID & Passcode in Settings
+
+
+//Popover Presentation - When run on iPad, the destination appears in a popover, and tapping anywhere outside of this popover will dismiss it, or on iPhone popovers are supported as well but by default it will present the destination modally over the full screen
+//Example: Tapping the + button in Calendar
+
+
+//advantages of using navigation controller
+//1. Keeps your app looking how users expect an iOS app to look
+//2. Takes care of navigation titles and links for you so you can focus on the rest of your app
+//3. Gives users gesture controls for back, forward
+//4. Manages the navigation stack, allowing you to easily jump between view controllers that might be further down in the stack (skip back to the homepage from a few view controllers in)
+//5. Has a delegate property so that you can have an object that understands where the user is in the app at all times
+
 class LifeCycleViewController: UIViewController {
     enum PresentMode {
         case presentFromNav //not add to navigation stack
