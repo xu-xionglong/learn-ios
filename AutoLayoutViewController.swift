@@ -100,6 +100,7 @@ class AutoLayoutViewController: UIViewController {
     
     
     override func viewWillLayoutSubviews() {
+        //没有重写loadView方法时，无法自定义root view，无法重写view的layoutSubviews方法，此时需要controller的回调
         print("AutoLayoutViewController viewWillLayoutSubviews")
     }
     
@@ -115,3 +116,18 @@ class AutoLayoutViewController: UIViewController {
         print("AutoLayoutViewController deinit")
     }
 }
+
+//AutoLayoutViewController viewDidLoad
+//AutoLayoutViewController viewWillAppear
+//FirstView updateConstraints
+//SecondView updateConstraints
+//RootView updateConstraints
+//AutoLayoutViewController updateViewConstraints
+
+//AutoLayoutViewController viewWillLayoutSubviews
+//RootView layoutSubviews
+//AutoLayoutViewController viewDidLayoutSubviews
+//SecondView layoutSubviews
+//FirstView layoutSubviews
+
+//AutoLayoutViewController viewDidAppear
