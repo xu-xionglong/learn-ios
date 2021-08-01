@@ -47,7 +47,7 @@ extension ImageViewController: UIImagePickerControllerDelegate, UINavigationCont
                 
                 var cgimage: CGImage!
  
-                let reformat = true
+                let reformat = false
                 
                 if (reformat) {
                     let width = uiimage.cgImage!.width
@@ -118,6 +118,10 @@ extension ImageViewController: UIImagePickerControllerDelegate, UINavigationCont
                     default:
                         print("default")
                     }
+                    
+                    print(CGBitmapInfo.alphaInfoMask.rawValue) //31，所有alphaInfo（1～7）的位集合
+                    print(CGBitmapInfo.floatInfoMask.rawValue) //3840 -> 111100000000 -> 256, 512, 1024, 2056
+                    print(CGBitmapInfo.floatComponents.rawValue) //256
                     
                     if ((bitmapInfo.rawValue & CGBitmapInfo.alphaInfoMask.rawValue) != 0) {
                         print("alphaInfoMask")
