@@ -588,3 +588,35 @@ func testMemoryLayout() {
     print(MemoryLayout<ExampleStruct0>.stride)    // 16
     print(MemoryLayout<ExampleStruct0>.alignment) // 8
 }
+
+func valueTypeVsReferenceType() {
+    struct TestStruct {
+        var a = 0
+    }
+    
+    class TestClass {
+        var a = 0
+    }
+    
+    //array is value type
+    var arrA = [1, 2, 3]
+    var arrB = arrA
+    arrB[0] = 4
+    print(arrA) //[1, 2, 3]
+    let closure0 = {arrA[0] = 5}
+    closure0()
+    print(arrA) //[5, 2, 3] closure capture by reference
+    
+    //struct is value type
+    let struA = TestStruct()
+    var struB = struA
+    struB.a = 1
+    print(struA.a) //0
+    
+    //class is reference type
+    let clsA = TestClass()
+    let clsB = clsA
+    clsB.a = 1
+    print(clsA.a) //1
+    
+}
