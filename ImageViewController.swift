@@ -15,9 +15,10 @@ class ImageViewController: UIViewController {
         
         view.addSubview(imageButton)
         view.backgroundColor = UIColor.gray
-        imageButton.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+//        imageButton.snp.makeConstraints { (make) in
+//            make.center.equalToSuperview()
+//        }
+        imageButton.frame.size = view.bounds.size
         imageButton.addTarget(self, action: #selector(selectImage), for: .touchUpInside)
     }
     
@@ -206,6 +207,7 @@ extension ImageViewController: UIImagePickerControllerDelegate, UINavigationCont
 //                }
                 
                 imageButton.setImage(uiimage, for: .normal)
+                imageButton.sizeToFit()
             }
         }
         picker.dismiss(animated: false, completion: nil)
